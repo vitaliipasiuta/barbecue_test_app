@@ -1,6 +1,4 @@
-# Price ticket
-
-Price-ticket microservice is data aggregator / mapper for needed price data for each page: Acco, SRP, Cust, Pax etc
+# Test app
 
 ## Start working with this project
 
@@ -30,6 +28,6 @@ npm run start
 npm run watch
 ```
 
-7. Navigate to the root route, e.g. http://localhost:3000
+7. Navigate to the root route, e.g. http://localhost:3010
 
 
