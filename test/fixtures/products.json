@@ -1,0 +1,101 @@
+[
+  {
+    "_id": "5b166912dae64f569d46296c",
+    "title": "Fried potatoes",
+    "weight": 200,
+    "id": 1,
+    "price": 100,
+    "category": {
+      "_id": "5b166762dae64f569d46294f",
+      "title": "vegatables"
+    }
+  },
+  {
+    "_id": "5b16693cdae64f569d46296f",
+    "title": "Fried tomatoes",
+    "weight": 300,
+    "id": 2,
+    "price": 80,
+    "category": {
+      "_id": "5b166762dae64f569d46294f",
+      "title": "vegatables"
+    }
+  },
+  {
+    "_id": "5b166965dae64f569d462972",
+    "title": "Fried mushrooms",
+    "weight": 250,
+    "id": 3,
+    "price": 110,
+    "category": {
+      "_id": "5b166762dae64f569d46294f",
+      "title": "vegatables"
+    }
+  },
+  {
+    "_id": "5b166c29dae64f569d462975",
+    "title": "Pork kebab",
+    "weight": 400,
+    "id": 4,
+    "price": 200,
+    "category": {
+      "_id": "5b166779dae64f569d462953",
+      "title": "pork"
+    }
+  },
+  {
+    "_id": "5b166ca6dae64f569d46297c",
+    "title": "Pork steak",
+    "weight": 400,
+    "id": 5,
+    "price": 300,
+    "category": {
+      "_id": "5b166779dae64f569d462953",
+      "title": "pork"
+    }
+  },
+  {
+    "_id": "5b166cd6dae64f569d46297f",
+    "title": "Beef kebab",
+    "weight": 400,
+    "id": 7,
+    "price": 250,
+    "category": {
+      "_id": "5b166785dae64f569d462956",
+      "title": "beef"
+    }
+  },
+  {
+    "_id": "5b166d04dae64f569d462982",
+    "title": "Beef steak",
+    "weight": 350,
+    "id": 7,
+    "price": 300,
+    "category": {
+      "_id": "5b166785dae64f569d462956",
+      "title": "beef"
+    }
+  },
+  {
+    "_id": "5b166d29dae64f569d462985",
+    "title": "Chicken kebab",
+    "weight": 500,
+    "id": 8,
+    "price": 190,
+    "category": {
+      "_id": "5b1667aadae64f569d46295c",
+      "title": "chicken"
+    }
+  },
+  {
+    "_id": "5b166d46dae64f569d462988",
+    "title": "Chicken steak",
+    "weight": 450,
+    "id": 5,
+    "price": 180,
+    "category": {
+      "_id": "5b1667aadae64f569d46295c",
+      "title": "chicken"
+    }
+  }
+]

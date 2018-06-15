@@ -1,0 +1,17 @@
+{
+  "server": {
+    "port": 3010,
+    "apiVersion": "1.0",
+    "httpTimeOut": 3000,
+    "maxSockets": 1000000
+  },
+  "db": {
+    "name": "barbecue",
+    "host": "localhost",
+    "port": "27017"
+  },
+  "logger": {
+    "level": "debug"
+  },
+  "beercomua": "http://localhost:3011"
+}

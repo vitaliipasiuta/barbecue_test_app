@@ -1,0 +1,15 @@
+src
+.git
+.gitignore
+.editorconfig
+gulpfile.js
+Jenkinsfile
+README.md
+LICENSE
+package-lock.json
+npm-shrinkwrap.json
+tslint.json
+tsconfig.json
+package.json
+node_modules
+docs

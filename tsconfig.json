@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "types": ["jest", "tc-nodejs-core-services"]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "api-doc",
+    "environment",
+    "middleware",
+    "routers",
+    "services"
+  ]
+}
