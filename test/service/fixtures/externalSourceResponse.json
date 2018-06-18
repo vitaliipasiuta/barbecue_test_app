@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "5b1687e58dc18f3cc4da4519",
+    "title": "bud light",
+    "volume": 0.5,
+    "id": 1,
+    "price": 15
+  },
+  {
+    "_id": "5b16880d8dc18f3cc4da452b",
+    "title": "corona",
+    "volume": 0.3,
+    "id": 2,
+    "price": 20
+  },
+  {
+    "_id": "5b1688378dc18f3cc4da4539",
+    "title": "stella artois",
+    "volume": 0.5,
+    "id": 3,
+    "price": 25
+  }
+]

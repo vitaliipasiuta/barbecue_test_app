@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "5b27a53799d3b628bf6d1462",
+    "title": "product1",
+    "weight": 200,
+    "id": 1,
+    "price": 100,
+    "category": {
+      "_id": "5b27a53799d3b628bf6d1461",
+      "title": "test_category",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "5b27a53799d3b628bf6d1463",
+    "title": "product2",
+    "weight": 200,
+    "id": 2,
+    "price": 200,
+    "category": {
+      "_id": "5b27a53799d3b628bf6d1461",
+      "title": "test_category",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "5b27a53799d3b628bf6d1464",
+    "title": "chicken kebab",
+    "weight": 300,
+    "id": 3,
+    "price": 300,
+    "category": {
+      "_id": "5b27a53799d3b628bf6d1461",
+      "title": "test_category",
+      "__v": 0
+    },
+    "__v": 0,
+    "freeDrink": true
+  }
+]

@@ -22,9 +22,10 @@ export class App extends BaseApp {
     return __dirname;
   }
 
-  public static INIT() {
-    BaseApp.config = new Config(resolve(__dirname, '../config/app.json'));
-    BaseApp.logger = new Logger(BaseApp.config.get('logger:level'), {application: 'price-ticket'});
+  public static INIT(env?: string) {
+    const file = env === 'test' ? '../config/test.json' : '../config/local.json';
+    BaseApp.config = new Config(resolve(__dirname, file));
+    BaseApp.logger = new Logger(BaseApp.config.get('logger:level'), {application: 'barbecue'});
     BaseApp.httpClient = new HttpClient(BaseApp.config, BaseApp.logger);
   }
 }

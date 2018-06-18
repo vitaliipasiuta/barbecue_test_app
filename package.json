@@ -9,6 +9,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.109",
     "body-parser": "^1.18.3",
+    "circular-json": "^0.5.4",
     "concurrently": "^3.5.1",
     "express": "^4.15.3",
     "express-joi-validation": "^0.2.1",
@@ -39,6 +40,7 @@
     "jest": "^22.4.4",
     "nock": "^9.3.0",
     "sinon": "^4.4.8",
+    "npm-run-all": "^4.1.1",
     "supertest": "^3.0.0",
     "ts-jest": "^22.0.0",
     "typescript": "^2.9.1",
@@ -60,7 +62,7 @@
     "modulePaths": [
       "<rootDir>/src/"
     ],
-    "silent": false,
+    "silent": true,
     "collectCoverage": true
   },
   "scripts": {
@@ -68,12 +70,13 @@
     "build": "gulp build",
     "watch-ts": "gulp watch",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run start\"",
-    "test": "jest",
+    "pretest": "npm run mongodb:start",
+    "jesttest": "jest",
+    "test": "npm-run-all --continue-on-error jesttest mongodb:stop",
     "mongodb:start": "mongod --port 27018 --dbpath test/.mongodb/data --fork --logpath /dev/stdout",
     "mongodb:stop": "mongo admin --port 27018 --eval 'db.shutdownServer()'",
     "test:coverage": "npm run build && nyc gulp test",
-    "eslint": "tslint --project tsconfig.json --config tslint.json -t codeFrame 'src/**/*.ts'",
-    "docs": "node ./docs/docsServer.js"
+    "eslint": "tslint --project tsconfig.json --config tslint.json -t codeFrame 'src/**/*.ts'"
   },
   "pre-commit": [
     "eslint",

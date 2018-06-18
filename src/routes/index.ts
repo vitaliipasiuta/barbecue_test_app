@@ -3,10 +3,10 @@
  */
 import * as express from 'express';
 
-import {StatusRoute} from './Status';
-import {CategoryRoute} from './Category';
-import {UserRoute} from './User';
-import {ProductRoute} from './Product';
+import { CategoryRoute } from './Category';
+import { ProductRoute } from './Product';
+import { StatusRoute } from './Status';
+import { UserRoute } from './User';
 
 const router = express.Router();
 

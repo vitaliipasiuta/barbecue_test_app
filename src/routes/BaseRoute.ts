@@ -13,7 +13,7 @@ export class BaseRoute {
   }
 
   public initRoutes(): Router {
-    return this.router
+    return this.router;
   }
 
 }

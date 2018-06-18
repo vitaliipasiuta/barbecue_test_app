@@ -1,8 +1,8 @@
-import {Request, Response} from 'express';
+import { Request, Response } from 'express';
 
 export class StatusController {
 
-  static getStatus(req: Request, res: Response): void {
+  public static getStatus(req: Request, res: Response): void {
     res.json({
       status: true,
       success: true,

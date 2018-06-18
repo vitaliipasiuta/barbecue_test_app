@@ -1,6 +1,6 @@
-import { BaseRoute } from './BaseRoute';
 import { Router } from 'express';
 import { ProductController } from '../controllers/Product';
+import { BaseRoute } from './BaseRoute';
 
 export class ProductRoute extends BaseRoute {
   public initRoutes(): Router {

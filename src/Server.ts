@@ -15,8 +15,8 @@ export class Server {
     this.initMiddlewares();
     this.initRoutes();
     this.connectToDB()
-      .then(() => console.log("Successfully connected to DB"))
-      .catch((err) => console.log("Connection to db has been failed", err));
+      .then(() => App.logger.info('Successfully connected to DB'))
+      .catch((err) => App.logger.info('Connection to db has been failed', err));
   }
 
   get express(): express.Application {
@@ -42,6 +42,7 @@ export class Server {
 
   public close(callback?: Function): void {
     this.httpServer.close(callback);
+    mongoose.connection.close();
   }
 
   /**
@@ -71,7 +72,7 @@ export class Server {
   private initRoutes(): void {
     this.express.use(router);
     this.express.use('/', (req, res) => {
-      res.status(404).send({error: `path doesn't exist`});
+      res.status(404).send({error: 'path doesnt exist'});
     });
   }
 
@@ -79,13 +80,13 @@ export class Server {
     const name = App.config.get('db:name');
     const host = App.config.get('db:host');
     const port = App.config.get('db:port');
-
-    console.log("Connecting to Database");
+    const url = `mongodb://${host}:${port}/${name}`;
+    App.logger.info(`Connecting to ${url}`);
 
     return new Promise((resolve, reject) => {
-      mongoose.connect(`mongodb://${host}:${port}/${name}`);
-      mongoose.connection.on("error", () => {
-        console.log("MongoDB connection error. Please make sure MongoDB is running.");
+      mongoose.connect(url);
+      mongoose.connection.on('error', () => {
+        App.logger.info('MongoDB connection error. Please make sure MongoDB is running.');
         process.exit();
       });
 

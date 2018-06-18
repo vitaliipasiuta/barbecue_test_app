@@ -1,4 +1,4 @@
-import {Document, Model, model, Schema, Types} from "mongoose";
+import { Document, Model, model, Schema, Types } from 'mongoose';
 
 const collectionName = 'category';
 
@@ -11,7 +11,7 @@ const categorySchema = new Schema({
     type: String,
     required: true,
   },
-}, {pluralize: false, collection: String(collectionName)});
+},                                {pluralize: false, collection: String(collectionName)});
 
 type CategoryModel = Model<ICategory> & ICategory;
 
@@ -19,4 +19,4 @@ const Category: CategoryModel = model<ICategory>(String(collectionName), categor
 
 export {
   Category,
-}
+};

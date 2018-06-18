@@ -1,6 +1,6 @@
-import { BaseRoute } from './BaseRoute';
 import { Router } from 'express';
 import { CategoryController } from '../controllers/Category';
+import { BaseRoute } from './BaseRoute';
 
 export class CategoryRoute extends BaseRoute {
 

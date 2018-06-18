@@ -3,7 +3,7 @@ const ts = require('gulp-typescript');
 const clean = require('gulp-clean');
 const sourcemaps = require('gulp-sourcemaps');
 const nodemon = require('gulp-nodemon');
-const config = require('./config/app.json');
+const config = require('./config/local.json');
 const BUILD_DIRECTORY = 'dist';
 const tsProject = ts.createProject('tsconfig.json');
 

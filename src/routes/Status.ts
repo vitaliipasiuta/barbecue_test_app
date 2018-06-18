@@ -1,6 +1,6 @@
-import { BaseRoute } from './BaseRoute';
 import { Router } from 'express';
 import { StatusController } from '../controllers/Status';
+import { BaseRoute } from './BaseRoute';
 
 export class StatusRoute extends BaseRoute {
 

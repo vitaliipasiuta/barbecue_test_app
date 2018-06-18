@@ -4,3 +4,7 @@ dist
 .idea
 .vscode
 .nyc_output
+
+# mongodb data files - used for testing
+test/.mongodb/data/*
+!test/.mongodb/data/.gitkeep

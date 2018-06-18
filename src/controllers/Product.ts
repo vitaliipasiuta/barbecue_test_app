@@ -1,38 +1,45 @@
-import {Request, Response} from 'express';
-import {filterSteaksOnly, filterKebabsOnly} from '../helpers/util';
-import {Product} from "../models/Product";
-import {Category} from "../models/Category";
-import {App} from "../App";
+import { Request, Response } from 'express';
+import { isNaN, toNumber } from 'lodash';
+import { App } from '../App';
+import { addBestOffer, filterKebabsOnly, filterSteaksOnly, freeDrink } from '../helpers/util';
+import { Category } from '../models/Category';
+import { Product } from '../models/Product';
 
 export class ProductController {
-  static async getAllProducts(req: Request, res: Response): Promise<void> {
-    const categories = await Product.find().populate('category');
-    res.json(categories);
+  public static async getAllProducts(req: Request, res: Response): Promise<void> {
+    let products = await Product.find().populate('category');
+    products = addBestOffer(products);
+    products = freeDrink(products);
+    res.json(products);
   }
 
-  static async getProductById(req: Request, res: Response): Promise<void> {
-    const id = req.params.id;
-    const product = await Product.findOne({ id });
-    res.json(product);
-  };
+  public static async getProductById(req: Request, res: Response): Promise<void> {
+    const id = toNumber(req.params.id);
+    if (isNaN(id)) {
+      res.send('Id should be number');
+    } else {
+      const product = await Product.findOne({id});
+      res.json(product);
+    }
+  }
 
-  static async getProductByCategory(req: Request, res: Response): Promise<void> {
-    const category = await Category.findOne({ title: req.params.category });
-    const product = await Product.find({ category: category._id });
+  public static async getProductByCategory(req: Request, res: Response): Promise<void> {
+    const category = await Category.findOne({title: req.params.category});
+    const product = await Product.find({category: category._id});
     res.json(product);
-  };
+  }
 
-  static async getSteaksOnly(req: Request, res: Response): Promise<void> {
+  public static async getSteaksOnly(req: Request, res: Response): Promise<void> {
     const products = await Product.find();
     res.json(filterSteaksOnly(products));
-  };
+  }
 
-  static async getKebabsOnly(req: Request, res: Response): Promise<void> {
+  public static async getKebabsOnly(req: Request, res: Response): Promise<void> {
     const products = await Product.find();
     res.json(filterKebabsOnly(products));
-  };
+  }
 
-  static async getBeer(req: Request, res: Response): Promise<void> {
+  public static async getBeer(req: Request, res: Response): Promise<void> {
     const uri = `${App.config.get('beercomua')}/beer`;
     const beerServiceResponse = await App.httpClient.get(uri);
     try {
@@ -41,5 +48,5 @@ export class ProductController {
     } catch (e) {
       throw new Error(e);
     }
-  };
+  }
 }
